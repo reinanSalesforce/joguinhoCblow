@@ -1,0 +1,29 @@
+.minimap { position: relative; width: 100%; max-width: 560px; margin: 0 auto; aspect-ratio: 1; border: 2px solid #3b3326; background: #0b130e; overflow: hidden; box-shadow: 0 0 0 1px #000, 0 10px 30px #000a; }
+.minimap-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; user-select: none; }
+.minimap-svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.mm-token {
+  position: absolute; width: 8.6%; aspect-ratio: 1; transform: translate(-50%, -50%); border-radius: 50%;
+  border: 2px solid; background: #000; overflow: visible; z-index: 2;
+  transition: left 1s cubic-bezier(0.4, 0, 0.2, 1), top 1s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s, filter 0.4s;
+}
+.mm-token.home { border-color: #4c8dff; box-shadow: 0 0 6px #4c8dff88; }
+.mm-token.away { border-color: #ff4b5c; box-shadow: 0 0 6px #ff4b5c88; }
+.mm-token.active { z-index: 4; animation: mm-pulse 0.9s ease-in-out infinite; }
+.mm-token.respawn { opacity: 0.45; filter: grayscale(1); z-index: 1; }
+.mm-token.skull { filter: grayscale(1) brightness(0.7); z-index: 5; }
+.mm-face { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; display: block; }
+.mm-token .champ-fallback { width: 100% !important; height: 100% !important; border-radius: 50%; font-size: 0.6rem; }
+.mm-skull { position: absolute; inset: 0; margin: auto; color: #fff; filter: drop-shadow(0 0 3px #000); }
+@keyframes mm-pulse { 50% { transform: translate(-50%, -50%) scale(1.15); } }
+
+.replay-pending { display: grid; grid-template-columns: 3rem 1fr; gap: 0.5rem; font-size: 0.9rem; padding: 0.3rem 0.5rem; background: #d79c6d10; border-left: 2px dashed var(--gold); color: var(--muted); }
+.replay-dots::after { content: ''; animation: dots 1.2s steps(4, end) infinite; }
+@keyframes dots { 0% { content: ''; } 25% { content: '.'; } 50% { content: '..'; } 75% { content: '...'; } }
+
+.field { display: grid; gap: 0.35rem; align-content: start; }
+.field label { text-transform: none; letter-spacing: 0; font-size: 0.85rem; }
+.field input[type='checkbox'] { width: 1.1rem; height: 1.1rem; }
+
+/* Foto do jogador nos cards */
+.pcard .art .photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.pcard .flag.lead { background: var(--gold); top: 38%; }

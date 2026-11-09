@@ -1,0 +1,5 @@
+Pasta exclusiva para imagens do jogo.
+
+minimap.png (ou .jpg/.webp)  ->  imagem de fundo do minimapa (Summoner's Rift, base azul embaixo à esquerda,
+                 vermelha em cima à direita). Basta salvar o arquivo aqui com esse nome.
+                 Formato quadrado (ex.: 900x900). Também funciona enviando pelo Admin.
